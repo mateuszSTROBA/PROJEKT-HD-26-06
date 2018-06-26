@@ -1,0 +1,3 @@
+  UPDATE KALENDARZ_GODZIN
+  SET date_hour =CAST(date_hour AS time)
+FROM KALENDARZ_GODZIN

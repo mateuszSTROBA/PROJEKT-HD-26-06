@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "AnalisysCube", "AnalisysCube\AnalisysCube.dwproj", "{4FC34ABC-51ED-4121-B4F1-01753F812488}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FC34ABC-51ED-4121-B4F1-01753F812488}.Development|Default.ActiveCfg = Development
+		{4FC34ABC-51ED-4121-B4F1-01753F812488}.Development|Default.Build.0 = Development
+		{4FC34ABC-51ED-4121-B4F1-01753F812488}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E93327D-4C9D-4D4F-8C35-09A6E8DF2786}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,324 @@
+USE [HD_REPOZYTORIUM_GLOWNE]
+GO
+
+/****** Object:  Table [dbo].[OPIS]    Script Date: 21.06.2018 08:43:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[OPIS](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[pierwszy_opis] [varchar](100) NULL,
+	[drugi_opis] [varchar](100) NULL,
+	[start_time_opis] [time](0) NULL,
+	[duration_opis] [time](7) NULL,
+ CONSTRAINT [PK_OPIS] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+USE [HD_REPOZYTORIUM_GLOWNE]
+GO
+
+/****** Object:  Table [dbo].[DANE_GLOWNE_TYM2]    Script Date: 23.06.2018 16:22:45 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[DANE_GLOWNE_TYM2](
+	[DATE_TYM] [datetime] NULL,
+	[CHANNEL_TYM] [varchar](50) NULL,
+	[DESCRIPTION_TYM] [varchar](100) NULL,
+	[ND_DESCRIPTION_TYM] [varchar](100) NULL,
+	[START_TIME_TYM] [varchar](50) NULL,
+	[DURATION_TYM] [time](7) NULL,
+	[start_time2] [time](0) NULL,
+	[Date2] [datetime] NULL,
+	[grupa_charakterystyk] [varchar](50) NULL,
+	[AMR] [float] NULL,
+	[AMR %] [float] NULL,
+	[SHR %] [float] NULL,
+	[RCH%] [float] NULL,
+	[RCH] [float] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KATEGORIA]    Script Date: 20.06.2018 23:00:48 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[KATEGORIA](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[nazwa_kanalu] [varchar](50) NULL,
+	[nazwa_kategorii] [varchar](50) NULL,
+ CONSTRAINT [PK_KATEGORIA] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[DateTime]    Script Date: 09.05.2018 20:58:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[DateTime](
+	[ID] [varchar](16) NOT NULL,
+	[DateTime] [datetime] NULL,
+	[MediaDateTime] [varchar](19) NULL,
+	[Date] [date] NULL,
+	[MediaDate] [varchar](10) NULL,
+	[Hour] [varchar](2) NULL,
+	[MediaHour] [varchar](2) NULL,
+	[minute] [varchar](2) NULL,
+	[DateHour] [datetime] NULL,
+	[DateMediaHour] [varchar](19) NULL,
+	[DayOfMonth] [tinyint] NULL,
+	[DayOfWeek] [tinyint] NULL,
+	[DayOfYear] [smallint] NOT NULL,
+	[WeekOfYear] [tinyint] NULL,
+	[Month] [varchar](15) NULL,
+	[MonthNumber] [tinyint] NULL,
+	[Weekday] [varchar](15) NULL,
+ CONSTRAINT [PK_DateTime] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[temp]    Script Date: 09.05.2018 21:39:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[temp](
+	[MediaDate] [datetime] NULL,
+	[Channel] [varchar](50) NULL,
+	[Description] [varchar](100) NULL,
+	[2nd Description] [varchar](100) NULL,
+	[MediaStartTime] [varchar](50) NULL,
+	[Duration] [time](7) NULL,
+	[Variable Target] [varchar](50) NULL,
+	[Total Individuals] [float] NULL,
+	[Podgrupa] [float] NULL,
+	[A16-49] [float] NULL,
+	[M16-49] [float] NULL,
+	[A4-15] [float] NULL,
+	[A4-9] [float] NULL,
+	[start_time2] [time](0) NULL,
+	[Date] [datetime] NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KANAL]    Script Date: 20.06.2018 22:59:58 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[KANAL](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[nazwa_kanalu] [varchar](50) NULL,
+	[KATEGORIA_ID] [int] NULL,
+	[GRUPA_MEDIOWA_ID] [int] NULL,
+ CONSTRAINT [PK_KANAL] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+/****** Object:  Table [dbo].[KALENDARZ_DATY]    Script Date: 20.06.2018 22:58:40 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[KALENDARZ_DATY](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[day_of_month] [tinyint] NULL,
+	[day_of_week] [tinyint] NULL,
+	[day_of_year] [smallint] NULL,
+	[week_of_year] [tinyint] NULL,
+	[month] [varchar](15) NULL,
+	[month_number] [tinyint] NULL,
+	[week_day] [varchar](15) NULL,
+	[data] [datetime] NULL,
+	[media_date] [varchar](10) NULL,
+	[year] [int] NULL
+ CONSTRAINT [PK_KALENDARZ_DATY] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KALENDARZ_GODZIN]    Script Date: 20.06.2018 22:58:54 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[KALENDARZ_GODZIN](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[hour] [varchar](2) NULL,
+	[media_hour] [varchar](2) NULL,
+	[date_hour] [datetime] NULL,
+	[date_media_hour] [varchar](19) NULL,
+	[minute] [varchar](2) NULL,
+	[time] [time](0) NULL
+ CONSTRAINT [PK_KALENDARZ_GODZIN] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KALENDARZ]    Script Date: 20.06.2018 22:57:53 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[KALENDARZ](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[date_time] [datetime] NULL,
+	[start_time] [time] (0) NULL,
+	[KALENDARZ_GODZIN_ID] [int] NULL,
+	[KALENDARZ_DATY_ID] [int] NULL,
+ CONSTRAINT [PK_KALENDARZ] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+/****** Object:  Table [dbo].[GRUPY_MEDIOWE]    Script Date: 20.06.2018 22:57:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[GRUPY_MEDIOWE](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[nazwa_kanalu] [varchar](50) NULL,
+	[nazwa_grupy] [varchar](50) NULL,
+ CONSTRAINT [PK_GRUPY_MEDIOWE] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[GRUPY_DOCELOWE]    Script Date: 20.06.2018 22:56:43 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[GRUPY_DOCELOWE](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[nazwa_grupy] [varchar](50) NULL,
+	[kod_grupy] [varchar](50) NULL,
+ CONSTRAINT [PK_GRUPY_DOCELOWE] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[FAKTY]    Script Date: 20.06.2018 22:54:49 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[FAKTY](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[GRUPY_DOCELOWE_ID] [int] NULL,
+	[OPIS_ID] [int] NULL,
+	[KANAL_ID] [int] NULL,
+	[KALENDARZ_ID] [int] NULL,
+	[AMR] [float] NULL,
+	[AMR%] [float] NULL,
+	[SHR%] [float] NULL,
+	[RCH%] [float] NULL,
+	[RCH] [float] NULL,
+ CONSTRAINT [PK_FAKTY] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[FAKTY]  WITH CHECK ADD  CONSTRAINT [FK_FAKTY_GRUPY_DOCELOWE] FOREIGN KEY([GRUPY_DOCELOWE_ID])
+REFERENCES [dbo].[GRUPY_DOCELOWE] ([ID])
+GO
+
+ALTER TABLE [dbo].[FAKTY] CHECK CONSTRAINT [FK_FAKTY_GRUPY_DOCELOWE]
+GO
+
+ALTER TABLE [dbo].[FAKTY]  WITH CHECK ADD  CONSTRAINT [FK_FAKTY_KALENDARZ] FOREIGN KEY([KALENDARZ_ID])
+REFERENCES [dbo].[KALENDARZ] ([ID])
+GO
+
+ALTER TABLE [dbo].[FAKTY] CHECK CONSTRAINT [FK_FAKTY_KALENDARZ]
+GO
+
+ALTER TABLE [dbo].[FAKTY]  WITH CHECK ADD  CONSTRAINT [FK_FAKTY_KANAL] FOREIGN KEY([KANAL_ID])
+REFERENCES [dbo].[KANAL] ([ID])
+GO
+
+ALTER TABLE [dbo].[FAKTY] CHECK CONSTRAINT [FK_FAKTY_KANAL]
+GO
+
+ALTER TABLE [dbo].[FAKTY]  WITH CHECK ADD  CONSTRAINT [FK_FAKTY_OPIS] FOREIGN KEY([OPIS_ID])
+REFERENCES [dbo].[OPIS] ([ID])
+GO
+
+ALTER TABLE [dbo].[FAKTY] CHECK CONSTRAINT [FK_FAKTY_OPIS]
+GO
+ALTER TABLE [dbo].[KALENDARZ]  WITH CHECK ADD  CONSTRAINT [FK_KALENDARZ_KALENDARZ_DATY] FOREIGN KEY([KALENDARZ_DATY_ID])
+REFERENCES [dbo].[KALENDARZ_DATY] ([ID])
+GO
+
+ALTER TABLE [dbo].[KALENDARZ] CHECK CONSTRAINT [FK_KALENDARZ_KALENDARZ_DATY]
+GO
+
+ALTER TABLE [dbo].[KALENDARZ]  WITH CHECK ADD  CONSTRAINT [FK_KALENDARZ_KALENDARZ_GODZIN] FOREIGN KEY([KALENDARZ_GODZIN_ID])
+REFERENCES [dbo].[KALENDARZ_GODZIN] ([ID])
+GO
+
+ALTER TABLE [dbo].[KALENDARZ] CHECK CONSTRAINT [FK_KALENDARZ_KALENDARZ_GODZIN]
+GO
+
+ALTER TABLE [dbo].[KANAL]  WITH CHECK ADD  CONSTRAINT [FK_KANAL_GRUPY_MEDIOWE] FOREIGN KEY([GRUPA_MEDIOWA_ID])
+REFERENCES [dbo].[GRUPY_MEDIOWE] ([ID])
+GO
+
+ALTER TABLE [dbo].[KANAL] CHECK CONSTRAINT [FK_KANAL_GRUPY_MEDIOWE]
+GO
+
+ALTER TABLE [dbo].[KANAL]  WITH CHECK ADD  CONSTRAINT [FK_KANAL_KATEGORIA] FOREIGN KEY([KATEGORIA_ID])
+REFERENCES [dbo].[KATEGORIA] ([ID])
+GO
+
+ALTER TABLE [dbo].[KANAL] CHECK CONSTRAINT [FK_KANAL_KATEGORIA]
+GO

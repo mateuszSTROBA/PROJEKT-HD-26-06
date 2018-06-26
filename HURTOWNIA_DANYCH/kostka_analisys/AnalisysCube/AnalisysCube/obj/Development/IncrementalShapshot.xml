@@ -1,0 +1,89 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>AnalisysCube</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>vTvuzt+pOIHEomHPMNAMdgUVWyw=26.06.2018 12:01:1526.06.2018 12:01:15</TimeStamp>
+        <ID>
+          <String>HD REPOZYTORIUM GLOWNE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>Pkt3mde9rK9gzkvlQYYISHY5WyM=26.06.2018 12:09:0426.06.2018 12:01:27</TimeStamp>
+        <ID>
+          <String>HD REPOZYTORIUM GLOWNE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>799kP4BFERIlGnL2S7wwM7ckFeE=26.06.2018 12:02:2226.06.2018 12:01:39</TimeStamp>
+        <ID>
+          <String>GRUPY DOCELOWE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>wvBBWZXkT2E4lrRTzxYiPQt3IVE=26.06.2018 12:02:2226.06.2018 12:02:07</TimeStamp>
+        <ID>
+          <String>OPIS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>BdFUyx/Rl67toqjjIP7rst0S0Uk=26.06.2018 12:02:5826.06.2018 12:02:58</TimeStamp>
+        <ID>
+          <String>KANAL</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>drWsjJcHYMPZb4TvWAJohlk+nn0=26.06.2018 12:03:1926.06.2018 12:03:19</TimeStamp>
+        <ID>
+          <String>FAKTY</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>RHvx0tUejIh79SBIOcMM6KMXr54=26.06.2018 12:24:4626.06.2018 12:24:39</TimeStamp>
+        <ID>
+          <String>KALENDARZ</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>bTMh3IiPBKPBzwhk43theBIUxG0=26.06.2018 12:25:0626.06.2018 12:25:06ffUQCqv1t9g2GdYIOZdZEGu1ERA=26.06.2018 12:25:0626.06.2018 12:25:06</TimeStamp>
+        <ID>
+          <String>HD REPOZYTORIUM GLOWNE</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>abzt2Fhyoxn6gUzddbPCRmyKYcs=26.06.2018 12:00:4526.06.2018 12:00:45</TimeStamp>
+      <ID>
+        <String>AnalisysCube</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2018-06-26T10:25:10.443333Z</LastDeployed>
+</DeploymentSnapshot>
